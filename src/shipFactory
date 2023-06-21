@@ -1,0 +1,38 @@
+class Ship {
+  constructor(name, length) {
+    this.name = name;
+    this.length = length;
+    this.lives = length;
+    this.sunk = false;
+  }
+  
+  getName() {
+    return this.name;
+  }
+  
+  setName() {
+      this.name = name;
+  }
+  
+  getLength() {
+    return this.length;
+  }
+  
+  setLength(length) {
+    this.length = length;
+  }
+  
+  hit() {
+    this.lives --;
+  }
+  
+  getLives() {
+    return this.lives;
+  }
+
+  setLives(lives) {
+    this.lives = lives;
+  }
+}
+
+module.exports = Ship;
