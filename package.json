@@ -1,0 +1,23 @@
+{
+  "name": "battleship",
+  "version": "1.0.0",
+  "description": "A simple battleship board game built using TDD",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "watch": "jest --watchAll"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Brandon-Lyons98/Battleship.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Brandon-Lyons98/Battleship/issues"
+  },
+  "homepage": "https://github.com/Brandon-Lyons98/Battleship#readme",
+  "devDependencies": {
+    "jest": "^29.5.0"
+  }
+}
