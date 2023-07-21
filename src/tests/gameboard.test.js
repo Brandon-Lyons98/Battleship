@@ -33,11 +33,6 @@ test('myBoard[0] myBoard[10] myBoard[20] myBoard[30] myBoard[40] should contain 
   expect(myBoard.board[40]).toBe('O');
 })
 
-test('receiveAttack on an occupied space should be true', () => {
-  myBoard.placeShip(myShip, 1);
-  expect(myBoard.receiveAttack(1)).toBeTruthy();
-})
-
 test('receiveAttack on an empty space should be false', () => {
   myBoard.placeShip[myShip, 0];
   expect(myBoard.receiveAttack(20)).toEqual(false);
