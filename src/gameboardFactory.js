@@ -37,8 +37,10 @@ class Gameboard {
   receiveAttack(coord) {
     if (this.board[coord] === 'O') {
       this.board[coord] = 'X';
+      
       let name = this.updateShipCoords(coord);
       this.updateShipCoords(coord);
+      
       switch (name) {
         case 'sub':
           sub.hit();
@@ -71,22 +73,23 @@ class Gameboard {
           }
           break;
         default:
-          console.log('ERROR');
+          console.log('ERROR...');
       }
-      return true;
     } else if (this.board[coord] === 'X') {
+      console.log('This spot has already been hit!');
       return false;
     } else {
       this.board[coord] = 'M';
-      return false;
+      console.log('Miss!');
+      return false
     }
   }
   
   updateShipCoords(coord) {
     for (let i = 0; i < this.shipCoords.length; i++) {
-      if (this.shipCoords[i].coords.includes(coord)) {
+      if (this.shipCoords[i].coords.includes(parseInt(coord))) {
         for (let j = 0; j < this.shipCoords[i].coords.length; j++) {
-          if (this.shipCoords[i].coords[j] === coord) {
+          if (this.shipCoords[i].coords[j] === parseInt(coord)) {
             this.shipCoords[i].coords[j] = 'X';
             return this.shipCoords[i].name;
           }
@@ -95,7 +98,6 @@ class Gameboard {
     }
   }
   
-  // Needs to return true when ships.isSunk() === true
   checkAllSunk() {
     if (sub.sunk === true && carrier.sunk === true && destroyer.sunk === true && battleship.sunk === true && cruiser.sunk === true) {
       return true;
@@ -105,11 +107,11 @@ class Gameboard {
   }
 }
 
-let carrier = new Ship('carrier', 5);
-let battleship = new Ship('battleship', 4);
-let sub = new Ship('sub', 3);
-let cruiser = new Ship('cruiser', 3);
-let destroyer = new Ship('destroyer', 2);
+// let carrier = new Ship('carrier', 5);
+// let battleship = new Ship('battleship', 4);
+// let sub = new Ship('sub', 3);
+// let cruiser = new Ship('cruiser', 3);
+// let destroyer = new Ship('destroyer', 2);
 
 // newBoard.placeShip(sub, 1, true);
 // newBoard.placeShip(carrier, 27);
