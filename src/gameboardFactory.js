@@ -1,5 +1,11 @@
 const Ship = require('./shipFactory');
 
+let carrier = new Ship('carrier', 5);
+let battleship = new Ship('battleship', 4);
+let sub = new Ship('sub', 3);
+let cruiser = new Ship('cruiser', 3);
+let destroyer = new Ship('destroyer', 2);
+
 class Gameboard {
   constructor() {
     this.board = [];
@@ -8,7 +14,7 @@ class Gameboard {
   
   getBoard() {
     for (let i = 0; i < 100; i++) {
-        this.board[i] = [];
+      this.board[i] = [];
     }
     return this.board;
   }
@@ -40,7 +46,7 @@ class Gameboard {
       
       let name = this.updateShipCoords(coord);
       this.updateShipCoords(coord);
-      
+
       switch (name) {
         case 'sub':
           sub.hit();
@@ -81,7 +87,7 @@ class Gameboard {
     } else {
       this.board[coord] = 'M';
       console.log('Miss!');
-      return false
+      return false;
     }
   }
   
@@ -106,17 +112,5 @@ class Gameboard {
     }
   }
 }
-
-// let carrier = new Ship('carrier', 5);
-// let battleship = new Ship('battleship', 4);
-// let sub = new Ship('sub', 3);
-// let cruiser = new Ship('cruiser', 3);
-// let destroyer = new Ship('destroyer', 2);
-
-// newBoard.placeShip(sub, 1, true);
-// newBoard.placeShip(carrier, 27);
-// newBoard.placeShip(battleship, 5);
-// newBoard.placeShip(cruiser, 65);
-// newBoard.placeShip(destroyer, 85);
 
 module.exports = Gameboard;
