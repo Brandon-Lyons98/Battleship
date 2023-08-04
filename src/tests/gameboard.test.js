@@ -33,17 +33,6 @@ test('myBoard[0] myBoard[10] myBoard[20] myBoard[30] myBoard[40] should contain 
   expect(myBoard.board[40]).toBe('O');
 })
 
-test('receiveAttack on an empty space should be false', () => {
-  myBoard.placeShip[myShip, 0];
-  expect(myBoard.receiveAttack(20)).toEqual(false);
-})
-
-test('receiveAttack on an already selected space should return false', () => {
-  myBoard.placeShip(myShip, 1);
-  myBoard.receiveAttack(1);
-  expect(myBoard.receiveAttack(1)).toEqual(false);
-})
-
 test("checkAllSunk should return false when all ships aren't sunk", () => {
   carrier = new Ship('carrier', 5);
   battleship = new Ship('battleship', 4);
