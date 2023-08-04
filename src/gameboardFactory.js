@@ -43,7 +43,6 @@ class Gameboard {
   receiveAttack(coord) {
     if (this.board[coord] === 'O') {
       this.board[coord] = 'X';
-      
       let name = this.updateShipCoords(coord);
       this.updateShipCoords(coord);
 
@@ -81,13 +80,6 @@ class Gameboard {
         default:
           console.log('ERROR...');
       }
-    } else if (this.board[coord] === 'X') {
-      console.log('This spot has already been hit!');
-      return false;
-    } else {
-      this.board[coord] = 'M';
-      console.log('Miss!');
-      return false;
     }
   }
   
