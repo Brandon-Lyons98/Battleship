@@ -1,0 +1,65 @@
+* {
+  padding: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  background-color: whitesmoke;
+}
+
+#winner {
+  display: flex;
+  align-self: center;
+  font-size: 2rem;
+}
+
+#board-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.boards {
+  display: flex;
+  margin-top: -4rem;
+}
+
+#gameboard,
+#cpu-board {
+  display: grid;
+  margin: 100px 20px;
+  grid-template-columns: repeat(10, 2fr);
+  grid-template-rows: repeat(10, 2fr);
+  border: 2px solid black;
+  border-radius: 5px;
+  height: 500px;
+  width: 500px;
+}
+
+.boardSquares {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  cursor: pointer;
+  border: 1px solid black;
+  height: 100%;
+  width: 100%;
+  justify-self: center;
+  align-items: center;
+}
+
+.blank {
+  background-color: rgb(185, 185, 185);
+}
+
+.ship {
+  background-color: rgb(0, 210, 31);
+}
+
+.hit {
+  background-color: rgb(216, 0, 0);
+}
+
+.miss {
+  background-color: rgb(110, 211, 245);
+}
